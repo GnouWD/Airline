@@ -11,6 +11,7 @@
 
 //       if (!color) {
 //         console.error('Random color could not be fetched.');
+
 //       }
 
 //       color = '#' + color;

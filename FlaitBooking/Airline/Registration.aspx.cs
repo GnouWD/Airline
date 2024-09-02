@@ -11,8 +11,7 @@ namespace FlaitBooking.Airline
 {
     public partial class WebForm6 : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-H0R2B3V0\SQLEXPRESS;Initial Catalog=F:\asp.net\FlaitBooking\FlaitBooking\App_Data\Airline.mdf;Integrated Security=True;");
-        SqlCommand cmd;
+        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-H0R2B3V0\SQLEXPRESS;Initial Catalog=maybay;Integrated Security=True;"); SqlCommand cmd;
         protected void Page_Load(object sender, EventArgs e)
         {
             con.Open();
@@ -27,17 +26,22 @@ namespace FlaitBooking.Airline
         {
             try
             {
-                string str = "insert into tblUsers values('"+txt_user_name.Text+"',"+txt_user_mobile.Text+",'"+txt_user_email.Text+"','"+txt_pass.Text+")";
-                cmd= new SqlCommand(str, con);
+                string str = "INSERT INTO tblUsers (name, mobile, email, pass) VALUES (@name, @mobile, @email, @pass)";
+                cmd = new SqlCommand(str, con);
+
+                // Sử dụng tham số hoá
+                cmd.Parameters.AddWithValue("@name", txt_user_name.Text);
+                cmd.Parameters.AddWithValue("@mobile", txt_user_mobile.Text);
+                cmd.Parameters.AddWithValue("@email", txt_user_email.Text);
+                cmd.Parameters.AddWithValue("@pass", txt_pass.Text);
+
                 cmd.ExecuteNonQuery();
 
-                Response.Write("<script>alert('Registration Successfull')</script>");
-
-
+                Response.Write("<script>alert('Registration Successful')</script>");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                Response.Write("<script>alert('Registration Successfull')</script>");
+                Response.Write("<script>alert('An error occurred')</script>");
                 Response.Write(ex.ToString());
             }
             finally
@@ -45,5 +49,6 @@ namespace FlaitBooking.Airline
                 con.Close();
             }
         }
+
     }
 }

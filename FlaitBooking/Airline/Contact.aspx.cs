@@ -11,7 +11,7 @@ namespace FlaitBooking.Airline
 {
     public partial class WebForm3 : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-H0R2B3V0\SQLEXPRESS;Initial Catalog=F:\asp.net\FlaitBooking\FlaitBooking\App_Data\Airline.mdf;Integrated Security=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-H0R2B3V0\SQLEXPRESS;Initial Catalog=maybay;Integrated Security=True;");
 
         SqlCommand cmd;
         protected void Page_Load(object sender, EventArgs e)

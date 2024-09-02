@@ -2,7 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\FlaitBooking",
-    "\\FlaitBooking\\Airline"
+    "\\FlaitBooking\\Airline",
+    "\\FlaitBooking\\Airline\\assets",
+    "\\FlaitBooking\\Airline\\assets\\js",
+    "\\FlaitBooking\\App_Start",
+    "\\FlaitBooking\\Booking"
   ],
   "SelectedNode": "\\FlaitBooking.sln",
   "PreviewInSolutionExplorer": false

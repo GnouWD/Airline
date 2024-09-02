@@ -12,8 +12,7 @@ namespace FlaitBooking.Booking
     public partial class Booking : System.Web.UI.Page
     {
 
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\asp.net\FlaitBooking\FlaitBooking\App_Data\Airline.mdf;Integrated Security=True");
-        SqlCommand cmd;
+        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-H0R2B3V0\SQLEXPRESS;Initial Catalog=maybay;Integrated Security=True;"); SqlCommand cmd;
 
         protected void Page_Load(object sender, EventArgs e)
         {
